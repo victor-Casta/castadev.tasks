@@ -1,0 +1,18 @@
+.aside__item {
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: 0.6rem;
+}
+.aside__item h3 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.aside__item:hover {
+  background-color: rgba(92, 92, 92, 0.3);
+}
+
+/*# sourceMappingURL=ItemsAside.css.map */
