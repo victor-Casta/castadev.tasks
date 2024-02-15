@@ -1,22 +1,24 @@
 import imageProfile from '../assets/images/profile.png';
 import taskIcon from '../assets/icons/tasks.svg';
 import { ItemsAside } from './ItemsAside';
-import { ItemsHeader } from './ItemsHeader';
 import { CreateTodoButton } from './CreateTodoButton';
 import { TodoItems } from './TodoItems';
 import taskListItem from '../assets/icons/items-task.svg'
 import { GraphicStorage } from './GraphicStorage';
 import { ItemStorage } from './ItemStorage';
 import { Uploads } from './Uploads';
+import { TodoSearch } from './TodoSearch';
 
 import '../css/App.css';
+import { TodoCounter } from './TodoCounter';
 
 
 const defaultTodos = [
   {text: 'Aprender React', completed: false},
   {text: 'Aprender Svelte', completed: true},
   {text: 'Aprender API notion', completed: false},
-  {text: 'Aprender Backend', completed: true},
+  {text: 'Aprender Backend', completed: false},
+  {text: 'Aprender FrontEnd', completed: true},
 ]
 
 function App() {
@@ -27,8 +29,8 @@ function App() {
           <div className="profile-content" >
             <img src={imageProfile} alt='Profile'/>
             <div>
-              <h2 >casta</h2>
-              <p >WorkSpace</p>
+              <h2>castaDev</h2>
+              <p>WorkSpace</p>
             </div>
           </div>
           <div className='items-list'>
@@ -37,9 +39,9 @@ function App() {
             </ul>
           </div>
         </aside>
-        <main >
-          <header >
-            <ItemsHeader icon={taskIcon} title={'Task'}/>
+        <main>
+          <header>
+            <TodoSearch />
           </header>
           <section className='tasks-list__container'>
             <div className='header__content'>
@@ -47,8 +49,11 @@ function App() {
               <CreateTodoButton />
             </div>
             <div className='items__container'>
+            <TodoCounter completed={2} total={10}/>
               <ul>
-                <TodoItems icon={taskListItem} text={defaultTodos[0].text}/>
+                {defaultTodos.map(todo => (
+                  <TodoItems key={todo.text} text={todo.text} icon={taskListItem}/>
+                ))}
               </ul>
             </div>
           </section>

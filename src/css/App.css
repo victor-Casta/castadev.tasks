@@ -51,9 +51,40 @@
 }
 .App .principal-content main {
   grid-column: span 8;
+  padding: 2rem;
+}
+.App .principal-content main header {
+  display: flex;
+  justify-content: center;
+}
+.App .principal-content main .tasks-list__container {
+  margin: 3rem 0 0 0;
+}
+.App .principal-content main .tasks-list__container .header__content {
+  margin: 0 0 2rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.App .principal-content main .tasks-list__container .header__content h2 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 18;
+}
+.App .principal-content main .tasks-list__container .items__container ul {
+  margin: 0;
+  padding: 0;
 }
 .App .secondary-content {
   grid-column: span 3;
+  display: grid;
+  gap: 2rem;
+}
+.App .secondary-content section {
+  background-color: rgba(73, 73, 73, 0.761);
+  border: 1px solid #595959;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
 }
 
 @media (max-width: 640px) {

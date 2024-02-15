@@ -1,0 +1,39 @@
+.Todoitems__container {
+  background-color: rgba(40, 40, 40, 0.568);
+  margin: 0.7rem 0 0 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Todoitems__container .Todoitems__content {
+  display: flex;
+  justify-content: start;
+  width: 50%;
+}
+.Todoitems__container .Todoitems__content img {
+  margin: 0 2rem 0 0;
+}
+.Todoitems__container .Todoitems__content p {
+  margin: 0;
+  padding: 0;
+}
+.Todoitems__container .actions .add {
+  background-color: #e4858b;
+}
+.Todoitems__container .actions .remove {
+  background-color: #3fef9d;
+}
+.Todoitems__container .actions span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin: 0 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=TodoItems.css.map */
