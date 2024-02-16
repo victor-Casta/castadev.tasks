@@ -1,0 +1,21 @@
+%base-button-style
+  width: 90px
+  height: 30px
+  border: none
+  border-radius: 1rem
+  color: #fff
+  font-weight: 900
+
+.Input__container
+  display: flex
+  justify-content: center
+.actions__container
+  margin: 3rem 0
+  display: flex
+  justify-content: space-between
+  .add
+    @extend %base-button-style
+    background-color: #46afff
+  .cancel
+    @extend %base-button-style
+    background-color: #ff467b

@@ -1,0 +1,27 @@
+.actions__container .cancel, .actions__container .add {
+  width: 90px;
+  height: 30px;
+  border: none;
+  border-radius: 1rem;
+  color: #fff;
+  font-weight: 900;
+}
+
+.Input__container {
+  display: flex;
+  justify-content: center;
+}
+
+.actions__container {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.actions__container .add {
+  background-color: #46afff;
+}
+.actions__container .cancel {
+  background-color: #ff467b;
+}
+
+/*# sourceMappingURL=CreateTodo.css.map */

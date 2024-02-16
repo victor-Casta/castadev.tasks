@@ -1,13 +1,10 @@
 import imageProfile from '../assets/images/profile.png';
 import taskIcon from '../assets/icons/tasks.svg';
 import { ItemsAside } from './ItemsAside';
-import { CreateTodoButton } from './CreateTodoButton';
 import { TodoItems } from './TodoItems';
 import taskListItem from '../assets/icons/items-task.svg'
-import { GraphicStorage } from './GraphicStorage';
-import { ItemStorage } from './ItemStorage';
-import { Uploads } from './Uploads';
 import { TodoSearch } from './TodoSearch';
+import { CreateTodo } from './CreateTodo';
 
 import '../css/App.css';
 import { TodoCounter } from './TodoCounter';
@@ -46,7 +43,6 @@ function App() {
           <section className='tasks-list__container'>
             <div className='header__content'>
               <h2>Tasks</h2>
-              <CreateTodoButton />
             </div>
             <div className='items__container'>
             <TodoCounter completed={2} total={10}/>
@@ -60,22 +56,10 @@ function App() {
         </main>
       </section>
       <section className='secondary-content'>
-        <section >
-          <h2>Storage</h2>
-          <div className='graphic-storage'>
-            <GraphicStorage />
-          </div>
-          <div className='items-container'>
-            <ul>
-              <ItemStorage icon={taskIcon} text={'videos'} countTasks={23}/>
-            </ul>
-          </div>
+        <section className='create-todo__container'>
+          <CreateTodo />
         </section>
-        <section >
-          <h2>Uploads</h2>
-          <div className='uploads__container'>
-            <Uploads  text={'payte brief'}/>
-          </div>
+        <section className='todo-completed'>
         </section>
       </section>
     </div>
