@@ -2,7 +2,14 @@ import '../css/TodoSearch.css';
 
 function TodoSearch() {
   return (
-    <input placeholder="Cortar cebolla" />
+    <input onChange={
+      (event) =>
+      {
+        console.log('Todo Search')
+        console.log(event.target.value)
+      }
+  }
+    placeholder="Buscar Tarea" />
   )
 }
 
