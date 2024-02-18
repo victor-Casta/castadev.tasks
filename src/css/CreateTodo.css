@@ -8,6 +8,7 @@
 }
 
 .Input__container {
+  width: 250px;
   display: flex;
   justify-content: center;
 }
@@ -19,6 +20,7 @@
 }
 .actions__container .add {
   background-color: #46afff;
+  margin: 0 50px 0 0;
 }
 .actions__container .cancel {
   background-color: #ff467b;

@@ -66,13 +66,21 @@
             padding: 0
   .secondary-content
     grid-column: span 3
-    display: grid
+    display: flex
+    flex-direction: column
     gap: 2rem
     section
       background-color: rgba(73, 73, 73, 0.761)
       border: 1px solid #595959
       border-radius: 2rem
       padding: 1rem 2rem
+    .create-todo__container
+      height: 40%
+      display: flex
+      flex-direction: column
+      align-items: center
+    .todo-completed
+      height: 60%
 
 
 

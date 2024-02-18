@@ -36,4 +36,12 @@
   cursor: pointer;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.icon-color {
+  fill: #d4e96d;
+}
+
 /*# sourceMappingURL=TodoItems.css.map */
