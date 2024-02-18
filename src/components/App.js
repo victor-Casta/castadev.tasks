@@ -34,6 +34,24 @@ function App() {
 
   console.log('search', searchValue);
 
+  const completeTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos)
+  }
+
+  const deleteTodo = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      (todo) => todo.text === text
+    );
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos)
+  }
+
   return (
     <div className="App">
       <section className='principal-content'>
@@ -63,7 +81,14 @@ function App() {
             <TodoCounter completed={completedTodos} total={totalTodos}/>
               <ul>
                 {searchedTodos.map(todo => (
-                  <TodoItems key={todo.text} text={todo.text} icon={taskListItem} completed={todo.completed}/>
+                  <TodoItems
+                  key={todo.text}
+                  text={todo.text}
+                  icon={taskListItem}
+                  completed={todo.completed}
+                  onComplete={() => completeTodo(todo.text)}
+                  onDelete={() => deleteTodo(todo.text)}
+                  />
                 ))}
               </ul>
             </div>

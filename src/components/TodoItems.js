@@ -1,6 +1,6 @@
 import '../css/TodoItems.css';
 
-function TodoItems({icon, text, completed}) {
+function TodoItems({icon, text, completed, onComplete, onDelete}) {
   return (
     <li className='Todoitems__container'>
       <div className='Todoitems__content'>
@@ -8,8 +8,14 @@ function TodoItems({icon, text, completed}) {
         <p className={`${completed && "strikethrough"}`}>{text}</p>
       </div>
       <div className='actions'>
-        <span className='add'>-</span>
-        <span className='remove'>+</span>
+        <span 
+        className='remove'
+        onClick={onDelete}
+        >-</span>
+        <span 
+        className='add'
+        onClick={onComplete}
+        >+</span>
       </div>
     </li>
   );

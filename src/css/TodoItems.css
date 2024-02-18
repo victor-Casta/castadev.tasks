@@ -20,10 +20,10 @@
   padding: 0;
 }
 .Todoitems__container .actions .add {
-  background-color: #e4858b;
+  background-color: #85e486;
 }
 .Todoitems__container .actions .remove {
-  background-color: #3fef9d;
+  background-color: #e4858b;
 }
 .Todoitems__container .actions span {
   width: 20px;
