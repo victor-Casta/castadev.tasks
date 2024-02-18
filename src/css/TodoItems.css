@@ -17,7 +17,7 @@
 }
 .Todoitems__container .Todoitems__content p {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 20px;
 }
 .Todoitems__container .actions .add {
   background-color: #85e486;

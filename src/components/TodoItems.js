@@ -1,10 +1,11 @@
 import '../css/TodoItems.css';
+import { TodoIcon } from './TodoIcon';
 
 function TodoItems({icon, text, completed, onComplete, onDelete}) {
   return (
     <li className='Todoitems__container'>
       <div className='Todoitems__content'>
-        <img src={icon} alt='Icon item task' />
+        <TodoIcon color={completed ? '#FF8400': '#727272'} />
         <p className={`${completed && "strikethrough"}`}>{text}</p>
       </div>
       <div className='actions'>
