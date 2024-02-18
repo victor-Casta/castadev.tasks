@@ -1,3 +1,4 @@
+import React from 'react';
 import imageProfile from '../assets/images/profile.png';
 import taskIcon from '../assets/icons/tasks.svg';
 import { ItemsAside } from './ItemsAside';
@@ -14,11 +15,21 @@ const defaultTodos = [
   {text: 'Aprender React', completed: true},
   {text: 'Aprender Svelte', completed: true},
   {text: 'Aprender API notion', completed: false},
-  {text: 'Aprender Backend', completed: false},
+  {text: 'Aprender Backend', completed: true},
   {text: 'Aprender FrontEnd', completed: true},
+  {text: 'Aprender DevOps', completed: false},
 ]
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultTodos);
+
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
+  console.log('search', searchValue);
+
   return (
     <div className="App">
       <section className='principal-content'>
@@ -38,14 +49,14 @@ function App() {
         </aside>
         <main>
           <header>
-            <TodoSearch />
+            <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}/>
           </header>
           <section className='tasks-list__container'>
             <div className='header__content'>
               <h2>Tasks</h2>
             </div>
             <div className='items__container'>
-            <TodoCounter completed={2} total={10}/>
+            <TodoCounter completed={completedTodos} total={totalTodos}/>
               <ul>
                 {defaultTodos.map(todo => (
                   <TodoItems key={todo.text} text={todo.text} icon={taskListItem} completed={todo.completed}/>
