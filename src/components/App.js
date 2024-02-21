@@ -10,31 +10,29 @@ import '../css/App.css';
 import { TodoCounter } from './TodoCounter';
 import { TodoCompleted } from './TodoCompleted';
 
+function useLocalStorage(itemName, initialValue) {
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
 
-// const defaultTodos = [
-//   {text: 'Aprender React', completed: true},
-//   {text: 'Aprender Svelte', completed: true},
-//   {text: 'Aprender API notion', completed: false},
-//   {text: 'Aprender Backend', completed: true},
-//   {text: 'Aprender FrontEnd', completed: true},
-//   {text: 'Aprender DevOps', completed: false},
-// ]
-
-//localStorage.setItem('castaDev.tasks_V1', JSON.stringify(defaultTodos));
-// localStorage.removeItem('castaDev.tasks_V1');
-
-function App() {
-  const localStorageTodos = localStorage.getItem('castaDev.tasks_V1');
-  let parsedTodos;
-
-  if(!localStorageTodos) {
-    localStorage.setItem('castaDev.tasks_V1', JSON.stringify([]));
-    parsedTodos = [];
+  if(!localStorageItem) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = initialValue;
   }else {
-    parsedTodos = JSON.parse(localStorageTodos)
+    parsedItem = JSON.parse(localStorageItem)
   }
 
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [item, setItem] = React.useState(parsedItem);
+
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem));
+    setItem(newItem)
+  }
+
+  return [item, saveItem];
+}
+
+function App() {
+  const [todos, saveTodos] = useLocalStorage('castaDev.tasks_V1', []);
   const [searchValue, setSearchValue] = React.useState('');
 
   const searchedTodos = todos.filter(
@@ -44,11 +42,6 @@ function App() {
   )
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
-
-  const saveTodos = (newTodos) => {
-    localStorage.setItem('castaDev.tasks_V1', JSON.stringify(newTodos));
-    setTodos(newTodos)
-  }
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
