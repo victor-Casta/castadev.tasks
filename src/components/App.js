@@ -11,17 +11,30 @@ import { TodoCounter } from './TodoCounter';
 import { TodoCompleted } from './TodoCompleted';
 
 
-const defaultTodos = [
-  {text: 'Aprender React', completed: true},
-  {text: 'Aprender Svelte', completed: true},
-  {text: 'Aprender API notion', completed: false},
-  {text: 'Aprender Backend', completed: true},
-  {text: 'Aprender FrontEnd', completed: true},
-  {text: 'Aprender DevOps', completed: false},
-]
+// const defaultTodos = [
+//   {text: 'Aprender React', completed: true},
+//   {text: 'Aprender Svelte', completed: true},
+//   {text: 'Aprender API notion', completed: false},
+//   {text: 'Aprender Backend', completed: true},
+//   {text: 'Aprender FrontEnd', completed: true},
+//   {text: 'Aprender DevOps', completed: false},
+// ]
+
+//localStorage.setItem('castaDev.tasks_V1', JSON.stringify(defaultTodos));
+// localStorage.removeItem('castaDev.tasks_V1');
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos);
+  const localStorageTodos = localStorage.getItem('castaDev.tasks_V1');
+  let parsedTodos;
+
+  if(!localStorageTodos) {
+    localStorage.setItem('castaDev.tasks_V1', JSON.stringify([]));
+    parsedTodos = [];
+  }else {
+    parsedTodos = JSON.parse(localStorageTodos)
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos);
   const [searchValue, setSearchValue] = React.useState('');
 
   const searchedTodos = todos.filter(
@@ -32,7 +45,10 @@ function App() {
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
 
-  console.log('search', searchValue);
+  const saveTodos = (newTodos) => {
+    localStorage.setItem('castaDev.tasks_V1', JSON.stringify(newTodos));
+    setTodos(newTodos)
+  }
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
@@ -40,7 +56,7 @@ function App() {
       (todo) => todo.text === text
     );
     newTodos[todoIndex].completed = true;
-    setTodos(newTodos)
+    saveTodos(newTodos)
   }
 
   const deleteTodo = (text) => {
@@ -49,7 +65,7 @@ function App() {
       (todo) => todo.text === text
     );
     newTodos.splice(todoIndex, 1);
-    setTodos(newTodos)
+    saveTodos(newTodos)
   }
 
   return (
