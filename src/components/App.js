@@ -11,8 +11,14 @@ import { CreateTodo } from "./CreateTodo";
 import { TodoCounter } from "./TodoCounter";
 import { TodoCompleted } from "./TodoCompleted";
 
+// localStorage.removeItem('castaDev.tasks_V1');
+// const defaultTodos = [
+//   {text: 'Aprender React', completed: false}
+// ]
+// localStorage.setItem('castaDev.tasks_V1', JSON.stringify(defaultTodos))
+
 function App() {
-  const [todos, saveTodos] = useLocalStorage("castaDev.tasks_V1", []);
+  const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage("castaDev.tasks_V1", []);
   const [searchValue, setSearchValue] = React.useState("");
 
   const searchedTodos = todos.filter((todo) => {
@@ -66,6 +72,10 @@ function App() {
             <div className="items__container">
               <TodoCounter completed={completedTodos} total={totalTodos} />
               <ul>
+                {loading && <p>Estamos cargando...</p>}
+                {error && <p>error...</p>}
+                {(!loading && searchedTodos.length === 0) && <p>Crea tu primer Todo!...</p>}
+
                 {searchedTodos.map((todo) => (
                   <TodoItems
                     key={todo.text}
