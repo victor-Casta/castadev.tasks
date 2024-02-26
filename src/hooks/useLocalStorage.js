@@ -10,10 +10,10 @@ function useLocalStorage(itemName, initialValue) {
       try {
         const localStorageItem = localStorage.getItem(itemName);
         let parsedItem;
-        if(!localStorageItem) {
+        if (!localStorageItem) {
           localStorage.setItem(itemName, JSON.stringify(initialValue));
           parsedItem = initialValue;
-        }else {
+        } else {
           parsedItem = JSON.parse(localStorageItem);
           setItem(parsedItem);
         }
@@ -21,22 +21,20 @@ function useLocalStorage(itemName, initialValue) {
         setLoading(false);
         setError(true);
       }
-  
       setLoading(false);
-    }, 2000)
+    }, 200000);
   }, [itemName, initialValue, item]);
-
 
   const saveItem = (newItem) => {
     localStorage.setItem(itemName, JSON.stringify(newItem));
-    setItem(newItem)
-  }
+    setItem(newItem);
+  };
 
   return {
     item,
     saveItem,
     loading,
-    error
+    error,
   };
 }
 

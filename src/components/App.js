@@ -10,6 +10,9 @@ import { TodoSearch } from "./TodoSearch";
 import { CreateTodo } from "./CreateTodo";
 import { TodoCounter } from "./TodoCounter";
 import { TodoCompleted } from "./TodoCompleted";
+import { TodoLoading } from "./TodoLoading";
+import { TodosError } from "./TodosError";
+import { EmptyTodos } from "./EmptyTodos";
 
 // localStorage.removeItem('castaDev.tasks_V1');
 // const defaultTodos = [
@@ -71,10 +74,10 @@ function App() {
             </div>
             <div className="items__container">
               <TodoCounter completed={completedTodos} total={totalTodos} />
+                {loading && <TodoLoading />}
               <ul>
-                {loading && <p>Estamos cargando...</p>}
-                {error && <p>error...</p>}
-                {(!loading && searchedTodos.length === 0) && <p>Crea tu primer Todo!...</p>}
+                {error && <TodosError />}
+                {(!loading && searchedTodos.length === 0) && <EmptyTodos />}
 
                 {searchedTodos.map((todo) => (
                   <TodoItems

@@ -71,6 +71,11 @@
   line-height: 1;
   font-size: 18;
 }
+.App .principal-content main .tasks-list__container .items__container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
 .App .principal-content main .tasks-list__container .items__container ul {
   margin: 0;
   padding: 0;
