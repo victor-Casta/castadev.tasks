@@ -2,22 +2,22 @@ import '../css/TodoLoading.css'
 
 function TodoLoading() {
   return(
-    <div class="loading__container">
-      <div class="fire">
-        <div class="fire-left">
-          <div class="main-fire"></div>
-          <div class="particle-fire"></div>
+    <div className="loading__container">
+      <div className="fire">
+        <div className="fire-left">
+          <div className="main-fire"></div>
+          <div className="particle-fire"></div>
         </div>
-        <div class="fire-center">
-          <div class="main-fire"></div>
-          <div class="particle-fire"></div>
+        <div className="fire-center">
+          <div className="main-fire"></div>
+          <div className="particle-fire"></div>
         </div>
-        <div class="fire-right">
-          <div class="main-fire"></div>
-          <div class="particle-fire"></div>
+        <div className="fire-right">
+          <div className="main-fire"></div>
+          <div className="particle-fire"></div>
         </div>
-        <div class="fire-bottom">
-          <div class="main-fire"></div>
+        <div className="fire-bottom">
+          <div className="main-fire"></div>
         </div>
       </div>
     </div>

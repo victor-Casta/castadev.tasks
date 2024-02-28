@@ -9,7 +9,7 @@
 }
 .Todoitems__container .Todoitems__content {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   width: 50%;
 }
 .Todoitems__container .Todoitems__content img {

@@ -9,14 +9,13 @@ function CreateTodo() {
         <input></input>
       </div>
       <div className="actions__container">
-        <button 
-        className="add" 
+        <button
+        className="add"
         onClick={
           (event) => {
-            console.log('hola')
-            console.log(event.target);
+            console.log(event);
           }
-        }
+         }
         >+  Crear</button>
         <button className="cancel">x  Cancelar</button>
       </div>
