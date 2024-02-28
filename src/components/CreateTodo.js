@@ -11,15 +11,22 @@ function CreateTodo() {
         <input></input>
       </div>
       <div className="actions__container">
-        <button
-        className="add"
-        onClick={
-          (event) => {
-            console.log(event);
-          }
-        }
-        >+  Crear</button>
-        <button className="cancel">x  Borrar</button>
+        <button className="add">
+          <span class="circle1"></span>
+          <span class="circle2"></span>
+          <span class="circle3"></span>
+          <span class="circle4"></span>
+          <span class="circle5"></span>
+          <span class="text">Crear</span>
+        </button>
+        <button className="remove">
+          <span class="circle1"></span>
+          <span class="circle2"></span>
+          <span class="circle3"></span>
+          <span class="circle4"></span>
+          <span class="circle5"></span>
+          <span class="text">Borrar</span>
+        </button>
       </div>
     </form>
   )

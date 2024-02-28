@@ -1,29 +1,81 @@
-.actions__container .cancel, .actions__container .add {
-  width: 90px;
-  height: 30px;
+form .actions__container .remove, form .actions__container .add {
+  font-family: "Kalam", cursive;
+  font-weight: bold;
+  color: white;
+  background-color: #171717;
+  padding: 0.8em 3em;
   border: none;
-  border-radius: 1rem;
-  color: #fff;
-  font-weight: 900;
+  border-radius: 0.6rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.Input__container {
-  width: 250px;
+form .actions__container .remove span:not(:nth-child(6)), form .actions__container .add span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+form .actions__container .remove span:nth-child(6), form .actions__container .add span:nth-child(6) {
+  position: relative;
+}
+form .actions__container .remove span:nth-child(1), form .actions__container .add span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+form .actions__container .remove span:nth-child(2), form .actions__container .add span:nth-child(2) {
+  transform: translate(-6em, 1.3em);
+}
+form .actions__container .remove span:nth-child(3), form .actions__container .add span:nth-child(3) {
+  transform: translate(-0.2em, 1.8em);
+}
+form .actions__container .remove span:nth-child(4), form .actions__container .add span:nth-child(4) {
+  transform: translate(3.5em, 1.4em);
+}
+form .actions__container .remove span:nth-child(5), form .actions__container .add span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+form h2 {
+  font-size: 22px;
+  line-height: 1;
+  margin: 0 auto 25px auto;
+  padding: 0;
+}
+form .Input__container {
   display: flex;
   justify-content: center;
 }
-
-.actions__container {
-  margin: 3rem 0;
+form .actions__container {
+  margin: 50px 0 0 0;
   display: flex;
   justify-content: space-between;
 }
-.actions__container .add {
-  background-color: #46afff;
-  margin: 0 50px 0 0;
+form .actions__container .add span:not(:nth-child(6)) {
+  background-color: #85e486;
 }
-.actions__container .cancel {
-  background-color: #ff467b;
+form .actions__container .add:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
+}
+form .actions__container .remove span:not(:nth-child(6)) {
+  background-color: #e4858b;
+}
+form .actions__container .remove:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(4);
+  transition: 1.5s ease;
 }
 
 /*# sourceMappingURL=CreateTodo.css.map */
