@@ -3,7 +3,7 @@ form .actions__container .remove, form .actions__container .add {
   font-weight: bold;
   color: white;
   background-color: #171717;
-  padding: 0.8em 3em;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 0.6rem;
   position: relative;
