@@ -13,6 +13,15 @@ function TodoProvider({ children }) {
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
   const totalTodos = todos.length;
 
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push({
+      text,
+      completed: false,
+    })
+    saveTodos(newTodos);
+  }
+
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text === text);
@@ -31,6 +40,7 @@ function TodoProvider({ children }) {
     <TodoContext.Provider value={{
       loading,
       error,
+      addTodo,
       completedTodos,
       totalTodos,
       searchValue,
