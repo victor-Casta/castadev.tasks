@@ -117,11 +117,8 @@
   align-items: center;
 }
 .App .secondary-content .todo-completed {
-  height: 60%;
-}
-.App .secondary-content .todo-completed h2 {
-  font-size: 18px;
-  text-align: center;
+  height: 100%;
+  background-color: rgb(31, 31, 31);
 }
 
 @media (max-width: 640px) {

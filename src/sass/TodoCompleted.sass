@@ -1,0 +1,63 @@
+@function progress($percent)
+  $deg: $percent/100 * 180
+  @return #{$deg}deg
+
+@mixin circular-graphic($percent, $numberPercent, $lineColor, $bgColor)
+  transform: rotate(progress($percent))
+  background: linear-gradient(0deg, $lineColor 50%, rgba(255, 255, 255, .2) 50%)
+  &::before
+    content: "#{$numberPercent}"
+    background: $bgColor content-box
+    transform: rotate(-#{progress($percent)})
+  &::after
+    background: linear-gradient(transparent 50%, $bgColor 50%)
+    transform: rotate(-#{progress($percent)})
+
+.TodoCompleted-container
+  width: 100%
+  height: 100%
+  padding: 15px
+  h2
+    font-size: 16px
+    line-height: 1.0
+    margin: 0
+    padding: 0
+  .task-graphic
+    width: 200px
+    height: 200px
+    margin: 20px 0 0 0
+    border-radius: 50%
+    //background: linear-gradient(0deg, #85e486 50%, rgba(255, 255, 255, .2) 50%)
+    position: relative
+    //transform: rotate(progress(50))
+    &::before
+      //content: '100%'
+      color: #85e486
+      width: 200px
+      height: 200px
+      position: absolute
+      top: 0
+      left: 0
+      //background: rgba(31, 31, 31) content-box
+      border-radius: 50%
+      padding: 1.2rem
+      box-sizing: border-box
+      font-size: 34px
+      display: flex
+      justify-content: center
+      line-height: 9rem
+      //transform: rotate(progress(-50))
+    &::after
+      content: ''
+      width: 200px
+      height: 200px
+      position: absolute
+      top: 0
+      left: 0
+      border-radius: 50%
+      //background: linear-gradient(transparent 50%, rgba(31, 31, 31) 50%)
+      transform: scale(1.1)
+      //transform: rotate(progress(-50))
+
+  .task-graphic
+    @include circular-graphic($percent: 5, $numberPercent: 5%, $lineColor: rgba(133,228,134,1), $bgColor: #1f1f1f)
