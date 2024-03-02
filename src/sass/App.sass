@@ -4,7 +4,8 @@ $text-size: 16px
 .App
   width: 60%
   max-width: 1200px
-  height: 75%
+  min-height: 45%
+  max-height: 60%
   margin: 0 auto
   display: grid
   grid-template-columns: repeat(12, 1fr)
@@ -65,8 +66,21 @@ $text-size: 16px
             font-size: $titles-size
         .items__container
           width: 100%
-          height: 400px
+          height: 100%
           position: relative
+          overflow-y: auto
+        .items__container::-webkit-scrollbar
+          width: 8px
+          height: 8px
+          display: none
+        .items__container::-webkit-scrollbar-thumb
+          background: #ccc
+          border-radius: 4px
+        .items__container::-webkit-scrollbar-thumb:hover
+          background: #b3b3b3
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2)
+        .items__container::-webkit-scrollbar-thumb:active
+          background-color: #999999
           ul
             margin: 0
             padding: 0
@@ -90,7 +104,6 @@ $text-size: 16px
       h2
         font-size: $titles-size
         text-align: center
-
 
 
 @media (max-width: 640px)

@@ -1,7 +1,8 @@
 .App {
   width: 60%;
   max-width: 1200px;
-  height: 75%;
+  min-height: 45%;
+  max-height: 60%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -73,10 +74,27 @@
 }
 .App .principal-content main .tasks-list__container .items__container {
   width: 100%;
-  height: 400px;
+  height: 100%;
   position: relative;
+  overflow-y: auto;
 }
-.App .principal-content main .tasks-list__container .items__container ul {
+.App .principal-content main .tasks-list__container .items__container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: none;
+}
+.App .principal-content main .tasks-list__container .items__container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.App .principal-content main .tasks-list__container .items__container::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.App .principal-content main .tasks-list__container .items__container::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+.App .principal-content main .tasks-list__container .items__container::-webkit-scrollbar-thumb:active ul {
   margin: 0;
   padding: 0;
 }
