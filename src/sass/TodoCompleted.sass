@@ -11,7 +11,7 @@
     transform: rotate(-#{progress($percent)})
   &::after
     background: linear-gradient(transparent 50%, $bgColor 50%)
-    transform: rotate(-#{progress($percent)})
+    transform: rotate(-#{progress($percent)}) scale(1.1)
 
 .TodoCompleted-container
   width: 100%
@@ -56,7 +56,6 @@
       left: 0
       border-radius: 50%
       //background: linear-gradient(transparent 50%, rgba(31, 31, 31) 50%)
-      transform: scale(1.1)
       //transform: rotate(progress(-50))
 
   .task-graphic
