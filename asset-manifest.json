@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/castadev.tasks/static/css/main.24347efa.css",
+    "main.js": "/castadev.tasks/static/js/main.d6f76066.js",
+    "static/media/profile.png": "/castadev.tasks/static/media/profile.f036eae391da0d16b9dd.png",
+    "static/media/tasks.svg": "/castadev.tasks/static/media/tasks.020afb0d389e91c75511d6ebe308a00b.svg",
+    "index.html": "/castadev.tasks/index.html",
+    "static/media/items-task.svg": "/castadev.tasks/static/media/items-task.2f446166d1272a24044584430dadcfbe.svg",
+    "main.24347efa.css.map": "/castadev.tasks/static/css/main.24347efa.css.map",
+    "main.d6f76066.js.map": "/castadev.tasks/static/js/main.d6f76066.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24347efa.css",
+    "static/js/main.d6f76066.js"
+  ]
+}
