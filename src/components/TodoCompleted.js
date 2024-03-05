@@ -3,7 +3,7 @@ import "../css/TodoCompleted.css";
 
 function TodoCompleted({ total, completed }) {
   const getPercent = (completNumber, totalNumber) => {
-    const percent = (completNumber / totalNumber) * 100
+    const percent = Math.round((completNumber / totalNumber) * 100)
     return isNaN(percent) ? 0 : percent;
   };
   return (
